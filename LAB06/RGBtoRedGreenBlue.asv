@@ -1,0 +1,34 @@
+function [R, G, B] = rgb_to_channels(input_path)
+    % Function to separate an RGB image into Red, Green, and Blue channels
+    % Input: input_path - the file path of the input RGB image
+    % Output: R - Red channel
+    %         G - Green channel
+    %         B - Blue channel
+
+    % Read the RGB image from the input path
+    rgb_image = imread("C:\Users\CSELAB-2\Desktop\LAB06\InputPicture.jpg");
+    
+    % Separate the Red, Green, and Blue channels
+    R = rgb_image(:,:,1); % Red channel
+    G = rgb_image(:,:,2); % Green channel
+    B = rgb_image(:,:,3); % Blue channel
+    
+    % Display the original RGB image and R, G, B channels
+    figure;
+    
+    subplot(2,2,1);
+    imshow(rgb_image);
+    title('Original RGB Image');
+    
+    subplot(2,2,2);
+    imshow(R);
+    title('Red Channel');
+    
+    subplot(2,2,3);
+    imshow(G);
+    title('Green Channel');
+    
+    subplot(2,2,4);
+    imshow(B);
+    title('Blue Channel');
+end
